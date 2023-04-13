@@ -66,3 +66,46 @@ function interChangeValue(){
     updatevalue();
 
 }
+
+function changeProduct(){
+    let val=$("#productItem").val();
+    $.ajax({
+        url:'../handler/convert.php',
+        data:{'text':val,'action':'changeItem'},
+        type:'post',
+        datatype:'text',
+        success:function(value){
+            console.log(value);
+            $("#items").html(value);
+        }
+    })
+}
+function changeItems(){
+    let val=$("#productItem").val();
+    let val1=$("#items").val();
+    $.ajax({
+        url:'../handler/convert.php',
+        data:{'text':val,'action':'changeItemsValue','text1':val1},
+        type:'post',
+        datatype:'text',
+        success:function(value){
+            console.log(value);
+            $("#idValue").html(value);
+        }
+    })
+}
+function showItems(){
+    let val=$("#productItem").val();
+    let val1=$("#items").val();
+    let val2=$("#idValue").val();
+    $.ajax({
+        url:'../handler/convert.php',
+        data:{'text':val,'action':'showTable','text1':val1,'text2':val2},
+        type:'post',
+        datatype:'text',
+        success:function(value){
+            console.log(value);
+            $("#tableDetail").html(value);
+        }
+    })
+}
