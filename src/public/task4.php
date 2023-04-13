@@ -1,3 +1,11 @@
+<?php
+$email = null;
+$pswd = null;
+if (isset($_COOKIE['email']))
+    $email = $_COOKIE['email'];
+if (isset($_COOKIE['pswd']))
+    $pswd = $_COOKIE['pswd'];   
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,13 +40,13 @@
                                             <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
                                             <!-- email field -->
                                             <div class="form-outline mb-4">
-                                                <input type="text" class="form-control form-control-lg" id="login_email" name='name'/>
-                                                <label class="form-label" for="form2Example17">Name </label>
+                                                <input type="email" class="form-control form-control-lg" id="login_email" name='email' value='<?php echo $email ?>' />
+                                                <label class="form-label" for="form2Example17">Your email </label>
                                                 <label for="" id="login_email_msg"></label>
                                             </div>
                                             <!-- password field -->
                                             <div class="form-outline mb-4">
-                                                <input type="password" class="form-control form-control-lg" id="login_pswd" name='pswd' />
+                                                <input type="password" class="form-control form-control-lg" id="login_pswd" name='pswd' value='<?php echo $pswd ?>' />
                                                 <label class="form-label" for="form2Example27">Password</label>
                                                 <label for="" id="login_pswd_msg"></label>
                                             </div>
