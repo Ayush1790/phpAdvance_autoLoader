@@ -5,7 +5,7 @@ if (isset($_POST)) {
     $email = $_POST['email'];
     $pswd = $_POST['pswd'];
     // adding the data in database
-    $stmt = "INSERT into `user`(`id`,`name`,`email`,`pswd`) values (null,'$name','$email','$pswd')";
+    $stmt = "INSERT into `users`(`id`,`name`,`email`,`pswd`) values (null,'$name','$email','$pswd')";
     $result = mysqli_query($conn, $stmt);
     if ($result) {
         setcookie("email", $email,time() + (86400 * 30), "/");

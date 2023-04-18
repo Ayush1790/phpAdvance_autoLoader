@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 $str=base64_decode($_SESSION['detail']);
+print_r($str);
 $data=explode(".",$str);
 echo "<table>
 <thead>
